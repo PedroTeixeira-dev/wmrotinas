@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {SelectorDiv} from './styles'
-import { Checkbox, FormControlLabel } from '@mui/material';
+import {FormControlLabel } from '@mui/material';
 import Switch from '@mui/material/Switch';
 
 const Selector = () => {
