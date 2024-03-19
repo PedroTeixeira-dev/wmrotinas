@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import {SelectorDiv} from './styles'
 import {FormControlLabel } from '@mui/material';
 import Switch from '@mui/material/Switch';
 
 const Selector = () => {
 
-  const [turnoSelecionado, setTurnoSelecionado] = useState(0)
+  const [turnoSelecionado, setTurnoSelecionado] = useState<number>(0)
 
   const options = [
     { value: 0, turno: '7-15' },
@@ -30,7 +30,7 @@ function mostraRotina(ValorRecebido: number) {
         return <>
         {rotinas[ValorRecebido].rotina.map((rotina, index) => (
             <div key={index}>
-              <FormControlLabel   onChange={(e) => {
+              <FormControlLabel   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               e.target.checked ? setTarefasFeitas(tarefasFeitas + 1) : setTarefasFeitas(tarefasFeitas - 1);
             }} control={<Switch />} label={rotina} />
             </div>
@@ -44,7 +44,7 @@ function mostraRotina(ValorRecebido: number) {
   return (
     <SelectorDiv>
         <h2>Escolha seu turno</h2>
-    <select  value = {turnoSelecionado} onChange={(e) => setTurnoSelecionado(e.target.value)}>
+    <select  value = {turnoSelecionado} onChange={(e) => setTurnoSelecionado(parseInt(e.target.value))}>
       {options.map((option) => (
         <option key={option.value} value={option.value}>
           {option.turno}
