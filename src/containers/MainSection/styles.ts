@@ -35,5 +35,7 @@ button {
 
 .range {
     width:100% ;
+    color: green;
+    background-color: green ;
 }
 `
