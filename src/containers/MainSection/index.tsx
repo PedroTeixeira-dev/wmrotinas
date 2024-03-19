@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 import {SelectorDiv} from './styles'
 import {FormControlLabel } from '@mui/material';
 import Switch from '@mui/material/Switch';
@@ -30,8 +30,8 @@ function mostraRotina(ValorRecebido: number) {
         return <>
         {rotinas[ValorRecebido].rotina.map((rotina, index) => (
             <div key={index}>
-              <FormControlLabel   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              e.target.checked ? setTarefasFeitas(tarefasFeitas + 1) : setTarefasFeitas(tarefasFeitas - 1);
+              <FormControlLabel   onChange={(e) => {
+              (e.target as HTMLInputElement).checked ? setTarefasFeitas(tarefasFeitas + 1) : setTarefasFeitas(tarefasFeitas - 1);
             }} control={<Switch />} label={rotina} />
             </div>
           ))}
