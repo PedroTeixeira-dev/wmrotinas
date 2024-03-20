@@ -37,7 +37,6 @@ function mostraRotina(ValorRecebido: number) {
           ))}
           <input className='range' value={tarefasFeitas} type="range" min={0} max={rotinas[ValorRecebido].rotina.length}/>
           {rotinas[ValorRecebido].rotina.length == tarefasFeitas ? <p>Parabéns! Realizou todas as rotinas do turno</p> : ''}
-          <button onClick={() => setTarefasFeitas(0)}>Resetar</button>
         </>
 }
 
